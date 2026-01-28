@@ -2,7 +2,7 @@ Sobre o Projeto Minha Rotina
 
 Este é um site de Gerenciamento de Tarefas responsivo.
 
-Desenvolvi toda a camada de Front-End sozinha, focando em:
+Desenvolvi este projeto, focando em:
 - Responsividade:Adaptação fluida entre Mobile e Desktop.
 - Interatividade:Adicionar e remover tarefas dinamicamente.
 - Lógica de interação.
