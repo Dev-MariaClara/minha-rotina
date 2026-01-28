@@ -1,57 +1,73 @@
-// 1. Pegando os elementos da tela
+
 const input = document.getElementById('input-tarefa');
 const btnAdicionar = document.getElementById('btn-adicionar');
 const lista = document.getElementById('lista-tarefas');
 
-// 2. Função que cria uma nova tarefa
-function adicionarTarefa() {
-    const textoTarefa = input.value;
 
-    // Verifica se a pessoa digitou algo (não deixa adicionar vazio)
+let tarefas = JSON.parse(localStorage.getItem('minhasTarefas')) || [];
+
+
+function salvarDados() {
+    localStorage.setItem('minhasTarefas', JSON.stringify(tarefas));
+}
+
+
+function renderizarTarefas() {
+    lista.innerHTML = ''; 
+    tarefas.forEach((tarefa, index) => {
+        const li = document.createElement('li');
+        if (tarefa.concluida) li.classList.add('concluida');
+
+        const span = document.createElement('span');
+        span.innerText = tarefa.texto;
+        
+        // Marcar como concluída
+        span.addEventListener('click', function() {
+            tarefas[index].concluida = !tarefas[index].concluida;
+            salvarDados();
+            renderizarTarefas();
+        });
+
+        const btnExcluir = document.createElement('button');
+        btnExcluir.innerText = '🗑️';
+        btnExcluir.classList.add('btn-excluir');
+
+        
+        btnExcluir.addEventListener('click', function() {
+            tarefas.splice(index, 1); 
+            salvarDados();
+            renderizarTarefas();
+        });
+
+        li.appendChild(span);
+        li.appendChild(btnExcluir);
+        lista.appendChild(li);
+    });
+}
+
+
+function adicionarTarefa() {
+    const textoTarefa = input.value.trim();
+
     if (textoTarefa === '') {
         alert('Por favor, digite uma tarefa!');
         return;
     }
 
-    // Cria o item da lista (li)
-    const li = document.createElement('li');
-
-    // Cria o texto dentro do li
-    const span = document.createElement('span');
-    span.innerText = textoTarefa;
     
-    // Ao clicar no texto, marca como concluída (risca o texto)
-    span.addEventListener('click', function() {
-        li.classList.toggle('concluida');
-    });
+    tarefas.push({ texto: textoTarefa, concluida: false });
 
-    // Cria o botão de excluir (X)
-    const btnExcluir = document.createElement('button');
-    btnExcluir.innerText = '🗑️';
-    btnExcluir.classList.add('btn-excluir');
-
-    // Ao clicar no X, remove a tarefa da tela
-    btnExcluir.addEventListener('click', function() {
-        li.remove();
-    });
-
-    // Coloca o texto e o botão dentro do li
-    li.appendChild(span);
-    li.appendChild(btnExcluir);
-
-    // Coloca o li dentro da lista (ul)
-    lista.appendChild(li);
-
-    // Limpa o campo de digitação
     input.value = '';
+    salvarDados();
+    renderizarTarefas();
 }
 
-// 3. Faz o botão "Adicionar" funcionar ao clicar
 btnAdicionar.addEventListener('click', adicionarTarefa);
-
-// 4. Faz funcionar também se apertar "Enter" no teclado
 input.addEventListener('keypress', function(evento) {
     if (evento.key === 'Enter') {
         adicionarTarefa();
     }
 });
+
+
+renderizarTarefas();
