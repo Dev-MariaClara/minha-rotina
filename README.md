@@ -15,8 +15,8 @@ Desenvolvi este projeto, focando em:
 -JavaScript: Manipulação de eventos,DOM uso de LocalStorage para armazenamento de dados.
 
   Funcionalidades Implementadas
--  Adicionar nova tarefa com validação (não permite vazio).
--  Marcar tarefa como concluída (efeito visual de "riscado").
+-  Adicionar nova tarefa com validação.
+-  Marcar tarefa como concluída .
 -  Excluir tarefa da lista.
 -  Layout totalmente responsivo.
--  Salvamento Automático: As tarefas permanecem salvas no navegador (LocalStorage) mesmo após fechar a página.
+-  Salvamento Automático: As tarefas permanecem salvas no navegador mesmo após fechar a página.
