@@ -1,4 +1,5 @@
 Sobre o Projeto Minha Rotina
+
 Este é um site de Gerenciamento de Tarefas responsivo.
 
 Desenvolvi toda a camada de Front-End sozinha, focando em:
