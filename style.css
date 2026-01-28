@@ -1,4 +1,4 @@
-/* Reseta os estilos padrões do navegador */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,17 +7,16 @@
 }
 
 body {
-    background-color: #F5F5F5; /* Aquele cinza claro do fundo */
+    background-color: #F5F5F5; 
     display: flex;
     justify-content: center;
     padding-top: 50px;
 }
 
-/* Caixa principal (simula a tela do celular) */
 .container {
     background-color: white;
     width: 100%;
-    max-width: 400px; /* Tamanho de um celular grande */
+    max-width: 400px; 
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -32,8 +31,6 @@ h1 {
     color: #333;
     font-size: 24px;
 }
-
-/* Estilo do Input e Botão */
 .input-group {
     display: flex;
     gap: 10px;
@@ -41,7 +38,7 @@ h1 {
 }
 
 input {
-    flex: 1; /* Ocupa todo espaço possível */
+    flex: 1; 
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -49,7 +46,7 @@ input {
 }
 
 button {
-    background-color: #D486A7; /* O ROSA da sua foto */
+    background-color: #D486A7; 
     color: white;
     border: none;
     padding: 12px 20px;
@@ -60,10 +57,10 @@ button {
 }
 
 button:hover {
-    background-color: #b56b8a; /* Rosa mais escuro ao passar o mouse */
+    background-color: #b56b8a; 
 }
 
-/* Estilo da Lista */
+
 ul {
     list-style: none;
 }
@@ -73,7 +70,7 @@ li {
     border-bottom: 1px solid #eee;
     padding: 15px;
     display: flex;
-    justify-content: space-between; /* Texto na esquerda, botão na direita */
+    justify-content: space-between; 
     align-items: center;
     cursor: pointer;
     transition: 0.2s;
@@ -83,13 +80,11 @@ li:hover {
     background-color: #fafafa;
 }
 
-/* Quando a tarefa está completa */
+
 li.concluida span {
     text-decoration: line-through;
     color: #888;
 }
-
-/* Botão de excluir (o X vermelhinho) */
 .btn-excluir {
     background-color: transparent;
     color: #ff4444;
@@ -100,10 +95,8 @@ li.concluida span {
 .btn-excluir:hover {
     background-color: #ffeaea;
 }
-
-/* RESPONSIVIDADE: Se for PC (tela grande), aumenta um pouco */
 @media (min-width: 768px) {
     .container {
-        max-width: 600px; /* Fica mais largo no Desktop */
+        max-width: 600px; 
     }
 }
