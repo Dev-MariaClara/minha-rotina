@@ -7,14 +7,16 @@ Desenvolvi este projeto, focando em:
 - Interatividade:Adicionar e remover tarefas dinamicamente.
 - Lógica de interação.
 - Adaptação de layout.
+- Persistência de Dados:Implementação de memória local para que as tarefas não sumam ao recarregar a página.
  
    Tecnologias Utilizadas
 - HTML5: Estrutura semântica e acessível.
 - CSS3: Variáveis CSS e Flexbox.
--JavaScript: Manipulação de eventos e DOM.
+-JavaScript: Manipulação de eventos,DOM uso de LocalStorage para armazenamento de dados.
 
   Funcionalidades Implementadas
 -  Adicionar nova tarefa com validação (não permite vazio).
 -  Marcar tarefa como concluída (efeito visual de "riscado").
 -  Excluir tarefa da lista.
 -  Layout totalmente responsivo.
+-  Salvamento Automático: As tarefas permanecem salvas no navegador (LocalStorage) mesmo após fechar a página.
